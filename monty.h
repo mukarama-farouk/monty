@@ -49,7 +49,7 @@ typedef struct {
     int insertMode;
 } GlobalData;
 extern GlobalData gd;
-
+void f_sub(stack_t **head, unsigned int lineCount);
 void f_pint(stack_t **head, unsigned int lineCount);
 void f_pop(stack_t **head, unsigned int lineCount);
 void f_swap(stack_t **head, unsigned int lineCount);

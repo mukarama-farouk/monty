@@ -9,7 +9,11 @@
  */
 void f_push(stack_t **head, unsigned int lineCount)
 {
-	int n, i = 0, flag = 0;
+	int n;
+       	int i = 0;
+	int flag = 0;
+
+	printf("Push instruction at line %d. Argument value: %s\n", lineCount, gd.argValue);
 
 	if (gd.argValue)
 	{
