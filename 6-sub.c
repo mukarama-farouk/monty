@@ -21,7 +21,7 @@ void f_sub(stack_t **head, unsigned int lineCount)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-
+	tmp = *head;
 	diff = (*head)->next->n - (*head)->n;
 	(*head)->next->n = diff;
 	free(tmp);
