@@ -10,15 +10,15 @@
  */
 void f_pall(stack_t **head, unsigned int lineCount)
 {
-	stack_t *cur;
+	stack_t *tmp;
 	(void)lineCount;
 
-	cur = *head;
-	if (cur == NULL)
+	tmp = *head;
+	if (tmp == NULL)
 		return;
-	while (cur != NULL)
+	while (tmp != NULL)
 	{
-		printf("%d\n", cur->n);
-		cur = cur->next;
+		printf("%d\n", tmp->n);
+		tmp = tmp->next;
 	}
 }
