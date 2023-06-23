@@ -16,15 +16,14 @@ void f_sub(stack_t **head, unsigned int lineCount)
 	if (*head == NULL || (*head)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", lineCount);
-  	      	fclose(gd.montyFile);
-        	free(gd.lineContent);
-        	free_stack(*head);
-        	exit(EXIT_FAILURE);
+		fclose(gd.montyFile);
+		free(gd.lineContent);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
 	}
+
 	diff = (*head)->next->n - (*head)->n;
 	(*head)->next->n = diff;
+	free(tmp);
 
-	tmp = *head;
-    	*head = (*head)->next;
-    	free(tmp);
 }

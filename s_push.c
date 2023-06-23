@@ -9,11 +9,9 @@
  */
 void f_push(stack_t **head, unsigned int lineCount)
 {
+	int i = 0;
 	int n;
-       	int i = 0;
 	int flag = 0;
-
-	printf("Push instruction at line %d. Argument value: %s\n", lineCount, gd.argValue);
 
 	if (gd.argValue)
 	{
@@ -22,15 +20,15 @@ void f_push(stack_t **head, unsigned int lineCount)
 		for (; gd.argValue[i] != '\0'; i++)
 		{
 			if (gd.argValue[i] > 57 || gd.argValue[i] < 48)
-				flag = 1; 
+				flag = 1;
 		}
 		if (flag == 1)
-		{ 
+		{
 			fprintf(stderr, "L%d: usage: push integer\n", lineCount);
 			fclose(gd.montyFile);
 			free(gd.lineContent);
 			free_stack(*head);
-			exit(EXIT_FAILURE); 
+			exit(EXIT_FAILURE);
 		}
 	}
 	else
